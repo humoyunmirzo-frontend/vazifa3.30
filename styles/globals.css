@@ -1,0 +1,203 @@
+body {
+  font-family: Manrope;
+}
+
+button {
+  background-color: transparent;
+  font-family: sans-serif;
+  border: none;
+  outline: none;
+}
+
+.siteName {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #6956E5;
+}
+
+.MuiPaper-elevation::-webkit-scrollbar {
+  display: none !important;
+}
+
+.headerTitle {
+  font-family: Manrope;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #23262F;
+}
+
+.headerInfo {
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #828282;
+}
+
+.cardTitle {
+  font-family: Manrope;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left
+}
+
+.chartTitle {
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #828282;
+}
+
+.marketingIcon {
+  padding: 0px 14px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #FABE7A;
+}
+
+.developersIcon {
+  padding: 0px 14px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #F6866A;
+}
+
+.hrIcon {
+  padding: 0px 14px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #59E6F6;
+}
+
+.designIcon {
+  padding: 0px 14px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #7661E2;
+}
+
+.inactiveBadge {
+  width: 10px;
+  height: 10px;
+  background-color: #6956E5;
+  border-radius: 100px;
+}
+
+.activeBadge {
+  width: 10px;
+  height: 10px;
+  background-color: #FB896B;
+  border-radius: 100px;
+}
+
+.totalBadge {
+  width: 10px;
+  height: 10px;
+  background-color: #F8C07F;
+  border-radius: 100px;
+}
+
+.employeeItem {
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #787486;
+}
+
+.quantity {
+  font-family: Manrope;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.date {
+  font-family: Manrope;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #787486;
+}
+
+.statisticTitle {
+  font-family: Manrope;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.10000000149011612px;
+  text-align: left;
+}
+
+.statisticInfo {
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0.10000000149011612px;
+  text-align: left;
+}
+
+.statistic {
+  font-family: Manrope;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.10000000149011612px;
+  text-align: left;
+  color: #787486;
+}
+
+.notificationItem {
+  background-color: #F9F9F9;
+  border-radius: 10px;
+}
+
+.notificationTitle {
+  font-family: Manrope;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #23262F;
+}
+
+.notificationInfo {
+  font-family: Manrope;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #708099;
+}
+
+.viewBtn {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #6956E5;
+}
