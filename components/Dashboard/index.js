@@ -194,7 +194,7 @@ export default function Dashboard({ children }) {
                                         <div className="d-flex align-items-center justify-content-between m-0">
                                             <Image
                                                 src={item.image}
-                                                alt="icon"
+                                                alt="link icon"
                                             />
                                         </div>
                                     </ListItemIcon>
@@ -212,7 +212,7 @@ export default function Dashboard({ children }) {
                             <ListItem key={index}>
                                 <ListItemButton>
                                     <ListItemIcon>
-                                        <div className="d-flex align-items-center justify-content-between">
+                                        <div className="d-flex align-items-center justify-content-between gap-0">
                                             <Image
                                                 src={item.image}
                                                 alt="Logo"
