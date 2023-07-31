@@ -209,7 +209,7 @@ export default function Dashboard({ children }) {
                     {
                         settingLinks.map((item, index) => (
 
-                            <ListItem key={index}>
+                            <ListItem key={index} sx={{bgcolor:"transparent"}}>
                                 <ListItemButton>
                                     <ListItemIcon>
                                         <div className="d-flex align-items-center justify-content-between gap-0">
