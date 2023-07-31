@@ -188,7 +188,7 @@ export default function Dashboard({ children }) {
                 <List>
                     {
                         links.map((item, index) => (
-                            <ListItem key={index} sx={{bgcolor:"#999999"}}>
+                            <ListItem key={index}>
                                 <ListItemButton>
                                     <ListItemIcon>
                                         <div className="d-flex align-items-center justify-content-between">
