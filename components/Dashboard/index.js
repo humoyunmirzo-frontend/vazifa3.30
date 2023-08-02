@@ -79,7 +79,7 @@ const links = [
     },
     {
         image: require("../../assets/icons/command 1.png"),
-        title: "Team",
+        title: "Teams",
         path: "/teams"
     },
     {
