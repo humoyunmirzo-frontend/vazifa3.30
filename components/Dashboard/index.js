@@ -24,6 +24,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import Image from 'next/image';
 import { Button } from '@mui/material';
 import { ThemeContext } from '@/contexts/themeContext';
+import { useRouter } from 'next/router';
 const drawerWidth = 290;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -73,39 +74,46 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 const links = [
     {
         image: require("../../assets/icons/grid1.png"),
-        title: "Dashboard"
+        title: "Dashboard",
+        path: "/"
     },
     {
         image: require("../../assets/icons/command 1.png"),
-        title: "Team"
+        title: "Team",
+        path: "/teams"
     },
     {
         image: require("../../assets/icons/users.png"),
-        title: "Employees"
+        title: "Employees",
+        path: "/employees"
     },
     {
         image: require("../../assets/icons/briefcase 1.png"),
-        title: "Projects"
+        title: "Projects",
+        path: "/projects"
     },
 ]
 const settingLinks = [
     {
         image: require("../../assets/icons/Vector1.png"),
-        title: "Meetings"
+        title: "Meetings",
+        path: "/meetings"
     },
     {
         image: require("../../assets/icons/Vector2.png"),
-        title: "Tasks"
+        title: "Tasks",
+        path: "/tasks"
     },
     {
         image: require("../../assets/icons/settings2.png"),
-        title: "Settings"
+        title: "Settings",
+        path: "/settings"
     },
 ]
 export default function Dashboard({ children }) {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
-
+    const router = useRouter()
     const handleDrawerOpen = () => {
         setOpen(true);
     };
@@ -188,17 +196,19 @@ export default function Dashboard({ children }) {
                 <List>
                     {
                         links.map((item, index) => (
-                            <ListItem key={index}>
+                            <ListItem key={index} className={router.pathname.startsWith(item.path) ? "active" : ""} onClick={() => router.push(item.path)}>
                                 <ListItemButton>
                                     <ListItemIcon>
                                         <div className="d-flex align-items-center justify-content-between m-0">
                                             <Image
                                                 src={item.image}
                                                 alt="link icon"
+                                                className='rounded'
+                                                style={{ boxShadow: ` 2px 2px 10px 2px ${router.pathname.startsWith(item.path) && item.path !== "/" || router.pathname === item.path ? "#6956E5" : "#fff"}` }}
                                             />
                                         </div>
                                     </ListItemIcon>
-                                    <ListItemText sx={{ fontWeight: "500", color: index === 0 ? "#6956E5" : "#878787", fontSize: "18px" }} primary={item.title} />
+                                    <ListItemText sx={{ fontWeight: "500", color: router.pathname.startsWith(item.path) && item.path !== "/" || router.pathname === item.path ? "#6956E5" : "#878787", fontSize: "18px" }} primary={item.title} />
                                 </ListItemButton>
                             </ListItem>
                         ))
@@ -209,7 +219,7 @@ export default function Dashboard({ children }) {
                     {
                         settingLinks.map((item, index) => (
 
-                            <ListItem key={index} sx={{bgcolor:"transparent"}}>
+                            <ListItem key={index} sx={{ bgcolor: "transparent" }}>
                                 <ListItemButton>
                                     <ListItemIcon>
                                         <div className="d-flex align-items-center justify-content-between gap-0">
@@ -231,7 +241,7 @@ export default function Dashboard({ children }) {
                     <button className="btn-light btn text-capitalize mb-3" style={{ color: "#6956E5" }}>Share Your Thoughts</button>
                 </Box>
             </Drawer>
-            <Main sx={{ bgcolor: mode === "dark" ? "#272727" : "#FFF" }} open={open}>
+            <Main sx={{flex:1, height:"100vh", bgcolor: mode === "dark" ? "#272727" : "#FFF" }} open={open}>
                 <DrawerHeader />
                 {children}
             </Main>
