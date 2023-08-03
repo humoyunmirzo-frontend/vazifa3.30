@@ -31,13 +31,17 @@ const options = {
 }
 
 export function ProjectDeliveriesChart() {
+    const [info, setInfo]=useState([])
     const [labels, setLabels] = useState([])
-    const [numbers, setNumbers] = useState([])
+    const [numbers1, setNumbers1] = useState([])
+    const [numbers2, setNumbers2] = useState([])
     useEffect(() => {
         async function getData() {
             const res = await getDashboardInfo()
-            setLabels(res[1].labels)
-            setNumbers(res[1].data)
+            setInfo(res[1])
+            setLabels(info.labels)
+            setNumbers1(info.data1)
+            setNumbers2(info.data2)
         }
         getData()
     }, [])
@@ -46,14 +50,14 @@ export function ProjectDeliveriesChart() {
         datasets: [
             {
                 label: '',
-                data: numbers[0],
+                data: numbers1,
                 borderColor: '#FB896B',
                 backgroundColor: '#FB896B',
                 tension: 0.9
             },
             {
                 label: '',
-                data: numbers[1],
+                data: numbers2,
                 borderColor: "#6956E5",
                 backgroundColor: '#6956E5',
                 tension: 0.9
