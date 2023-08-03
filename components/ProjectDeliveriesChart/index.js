@@ -35,13 +35,13 @@ export function ProjectDeliveriesChart() {
     const [numbers1, setNumbers1] = useState()
     const [numbers2, setNumbers2] = useState()
     useEffect(() => {
-        async function getData(){
-            const res = await getProjectDeliveries()
+        // async function getData(){
+            const res =  getProjectDeliveries()
             setLabels(res.labels)
             setNumbers1(res.data1)
             setNumbers2(res.data2)
-        }
-        getData()
+        // }
+        // getData()
     }, [])
     const data = {
         labels,

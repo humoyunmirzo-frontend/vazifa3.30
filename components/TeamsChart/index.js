@@ -38,12 +38,12 @@ export function TeamsChart() {
   const [labels, setLabels] = useState()
   const [numbers, setNumbers] = useState()
   useEffect(() => {
-    async function getData(){
-      const res = await getTeamsStrength()
+    // async function getData(){
+      const res =  getTeamsStrength()
       setLabels(res.labels)
       setNumbers(res.data)
-    }
-    getData()
+    // }
+    // getData()
   }, [])
   const data = {
    labels,

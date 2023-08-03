@@ -8,7 +8,7 @@ const getTeamsStrength = async () => {
         console.log(res.data);
         return res.data
     } catch (error) {
-        console.log(error);
+        return
     }
 }
 const getProjectDeliveries = async () => {
@@ -17,7 +17,7 @@ const getProjectDeliveries = async () => {
         console.log(res.data);
         return res.data
     } catch (error) {
-        console.log(error);
+        return
     }
 }
 export { getTeamsStrength, getProjectDeliveries }
