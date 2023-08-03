@@ -40,8 +40,8 @@ export function TeamsChart() {
   useEffect(() => {
     async function getData() {
       const res = await getDashboardInfo()
-      setLabels(res.teamsStrength.labels)
-      setNumbers(res.teamsStrength.data)
+      setLabels(res[0].labels)
+      setNumbers(res[0].data)
     }
     getData()
   }, [])

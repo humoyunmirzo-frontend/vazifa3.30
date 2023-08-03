@@ -36,8 +36,8 @@ export function ProjectDeliveriesChart() {
     useEffect(() => {
         async function getData() {
             const res = await getDashboardInfo()
-            setLabels(res.projectDeliveries.labels)
-            setNumbers(res.projectDeliveries.data)
+            setLabels(res[1].labels)
+            setNumbers(res[1].data)
         }
         getData()
     }, [])
