@@ -1,4 +1,0 @@
-import { dashboard } from "@/data/dashboard"
-export default function handler(req, res) {
-  res.status(200).json(dashboard)
-}
