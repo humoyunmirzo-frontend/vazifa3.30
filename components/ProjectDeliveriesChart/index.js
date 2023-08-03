@@ -39,9 +39,9 @@ export function ProjectDeliveriesChart() {
         async function getData(){
             const res = await getDashboardInfo()
             // setInfo(res[1])
-            setLabels(res[1].labels)
-            setNumbers1(res[1].data1)
-            setNumbers2(res[1].data2)
+            setLabels(res.projectDeliveries.labels)
+            setNumbers1(res.projectDeliveries.data1)
+            setNumbers2(res.projectDeliveries.data2)
         }
         getData()
     }, [])
