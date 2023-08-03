@@ -40,7 +40,6 @@ export function ProjectDeliveriesChart() {
             setNumbers(res.projectDeliveries.data)
         }
         getData()
-        console.log();
     }, [])
     const data = {
         labels,

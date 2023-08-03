@@ -44,7 +44,6 @@ export function TeamsChart() {
       setNumbers(res.teamsStrength.data)
     }
     getData()
-    console.log();
   }, [])
   const data = {
    labels,
