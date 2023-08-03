@@ -39,11 +39,10 @@ export function TeamsChart() {
   const [labels, setLabels] = useState([])
   const [numbers, setNumbers] = useState([])
   useEffect(() => {
-    async function getData() {
+    async function getData(){
       const res = await getDashboardInfo()
-      setInfo(res[0])
-      setLabels(info.labels)
-      setNumbers(info.data)
+      setLabels(res[0].labels)
+      setNumbers(res[0].data)
     }
     getData()
   }, [])

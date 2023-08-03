@@ -31,17 +31,17 @@ const options = {
 }
 
 export function ProjectDeliveriesChart() {
-    const [info, setInfo]=useState([])
+    const [info, setInfo] = useState([])
     const [labels, setLabels] = useState([])
     const [numbers1, setNumbers1] = useState([])
     const [numbers2, setNumbers2] = useState([])
     useEffect(() => {
-        async function getData() {
+        async function getData(){
             const res = await getDashboardInfo()
-            setInfo(res[1])
-            setLabels(info.labels)
-            setNumbers1(info.data1)
-            setNumbers2(info.data2)
+            // setInfo(res[1])
+            setLabels(res[1].labels)
+            setNumbers1(res[1].data1)
+            setNumbers2(res[1].data2)
         }
         getData()
     }, [])
