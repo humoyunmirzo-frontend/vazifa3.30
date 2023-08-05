@@ -36,10 +36,10 @@ export function ProjectDeliveriesChart() {
     const [numbers2, setNumbers2] = useState()
     useEffect(() => {
         // async function getData(){
-            const res =  getProjectDeliveries()
-            setLabels(res.labels)
-            setNumbers1(res.data1)
-            setNumbers2(res.data2)
+        const res = getProjectDeliveries()
+        setLabels(res.labels)
+        setNumbers1(res.data1)
+        setNumbers2(res.data2)
         // }
         // getData()
     }, [])
