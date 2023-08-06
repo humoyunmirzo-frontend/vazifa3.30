@@ -10,7 +10,7 @@ import {
     Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { getProjectDeliveries } from '../../api/index';
+import { getDashboardInfo, getProjectDeliveries } from '@/api';
 
 ChartJS.register(
     CategoryScale,
@@ -35,13 +35,13 @@ export function ProjectDeliveriesChart() {
     const [numbers1, setNumbers1] = useState()
     const [numbers2, setNumbers2] = useState()
     useEffect(() => {
-        // async function getData(){
-        const res = getProjectDeliveries()
+        async function getData(){
+        const res = await getProjectDeliveries()
         setLabels(res.labels)
         setNumbers1(res.data1)
         setNumbers2(res.data2)
-        // }
-        // getData()
+        }
+        getData()
     }, [])
     const data = {
         labels,

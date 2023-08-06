@@ -9,7 +9,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { getTeamsStrength } from '../../api/index';
+import { getTeamsStrength } from '@/api';
 
 ChartJS.register(
   CategoryScale,
@@ -38,12 +38,15 @@ export function TeamsChart() {
   const [labels, setLabels] = useState()
   const [numbers, setNumbers] = useState()
   useEffect(() => {
-    const res = getTeamsStrength()
-    setLabels(res.labels)
-    setNumbers(res.data)
+    async function getData(){
+      const res = await getTeamsStrength()
+      setLabels(res.labels)
+      setNumbers(res.data)
+    }
+    getData()
   }, [])
   const data = {
-    labels,
+   labels,
     datasets: [
       {
         label: '',
