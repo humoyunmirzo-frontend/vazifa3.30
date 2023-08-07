@@ -34,19 +34,24 @@ export const options = {
 };
 
 
-export function TeamsChart() {
-  const [labels, setLabels] = useState()
-  const [numbers, setNumbers] = useState()
-  useEffect(() => {
-    async function getData(){
-      const res = await getTeamsStrength()
-      setLabels(res.labels)
-      setNumbers(res.data)
-    }
-    getData()
-  }, [])
+
+export function TeamsChart({ info }) {
+  const [labels, setLabels] = useState([])
+  const [numbers, setNumbers] = useState([])
+    useEffect(() => {
+    //   async function getData() {
+    //     const res = await getTeamsStrength()
+    // setLabels(res.labels)
+    // setNumbers(res.data)
+    //   }
+    //   getData()
+    setLabels(info.labels)
+    setNumbers(info.data)
+    console.log(info)
+    }, [])
+  // console.log(data);
   const data = {
-   labels,
+    labels,
     datasets: [
       {
         label: '',
@@ -56,4 +61,10 @@ export function TeamsChart() {
     ],
   };
   return <Bar data={data} />;
+}
+export async function getStaticProps() {
+  const res = await getTeamsStrength()
+  return {
+    props: { info: res }
+  }
 }
