@@ -5,7 +5,8 @@ import { useState } from 'react'
 import { ThemeContext } from '@/contexts/themeContext'
 import { teams } from '@/data/teams'
 import { useRouter } from 'next/router'
-export default function Home() {
+import { getTeams } from '@/api'
+export default function Home({data}) {
   const [mode, setMode] = useState("light")
   const theme = createTheme({
     palette: {
@@ -51,4 +52,12 @@ export default function Home() {
       </ThemeContext.Provider >
     </>
   )
+}
+export async function getStaticProps(){
+  const res = await getTeams()
+  return {
+    props:{
+      data:res
+    }
+  }
 }

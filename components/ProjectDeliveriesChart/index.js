@@ -30,19 +30,19 @@ const options = {
     },
 }
 
-export function ProjectDeliveriesChart() {
-    const [labels, setLabels] = useState()
-    const [numbers1, setNumbers1] = useState()
-    const [numbers2, setNumbers2] = useState()
-    useEffect(() => {
-        async function getData(){
-        const res = await getProjectDeliveries()
-        setLabels(res.labels)
-        setNumbers1(res.data1)
-        setNumbers2(res.data2)
-        }
-        getData()
-    }, [])
+export function ProjectDeliveriesChart({labels, numbers1, numbers2}) {
+    // const [labels, setLabels] = useState()
+    // const [numbers1, setNumbers1] = useState()
+    // const [numbers2, setNumbers2] = useState()
+    // useEffect(() => {
+    //     async function getData(){
+    //     const res = await getProjectDeliveries()
+    //     setLabels(res.labels)
+    //     setNumbers1(res.data1)
+    //     setNumbers2(res.data2)
+    //     }
+    //     getData()
+    // }, [])
     const data = {
         labels,
         datasets: [

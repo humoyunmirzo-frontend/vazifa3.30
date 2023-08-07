@@ -8,6 +8,7 @@ import Notifications from '@/components/Notifications'
 import { CssBaseline, ThemeProvider, Typography, createTheme } from '@mui/material'
 import { useState } from 'react'
 import { ThemeContext } from '@/contexts/themeContext'
+import { getProjectDeliveries, getTeamsStrength } from '@/api'
 const statisticCards = [
   {
     title: "Top 10",
@@ -28,7 +29,9 @@ const statisticCards = [
     bgcolor: "#E5F7FF"
   },
 ]
-export default function Home() {
+export default function Home({ data, projectsData }) {
+  console.log(data.labels);
+  console.log(data.data);
   const [mode, setMode] = useState("light")
   const theme = createTheme({
     palette: {
@@ -58,7 +61,7 @@ export default function Home() {
 
                     Teams Strength
                   </div>
-                  <TeamsChart />
+                  <TeamsChart labels={data.labels} numbers={data.data} />
                   <div className="d-flex flex-column  flex-wrap gap-2 align-item-center">
                     <div className="d-flex gap-4">
                       <div className="d-flex w-50 align-items-center gap-2">
@@ -146,7 +149,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <ProjectDeliveriesChart />
+                <ProjectDeliveriesChart labels={projectsData.labels} numbers1={projectsData.data1} numbers2={projectsData.data2} />
               </div>
               <div className="col-sm-12 col-md-4">
                 <Notifications />
@@ -157,4 +160,14 @@ export default function Home() {
       </ThemeContext.Provider >
     </>
   )
+}
+export async function getStaticProps() {
+  const res1 = await getTeamsStrength()
+  const res2 = await getProjectDeliveries()
+  return {
+    props: {
+      data: res1,
+      projectsData: res2
+    }
+  }
 }

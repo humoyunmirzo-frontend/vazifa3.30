@@ -5,9 +5,10 @@ const instance = axios.create({
 const getTeamsStrength = async () => {
     try {
         const res = await instance.get("teams")
+        console.log(res.data);
         return res.data
     } catch (error) {
-        return
+        console.log(error);
     }
 }
 const getProjectDeliveries = async () => {
@@ -15,7 +16,15 @@ const getProjectDeliveries = async () => {
         const res = await instance.get("projects")
         return res.data
     } catch (error) {
-        return
+        console.log(error);
     }
 }
-export { getTeamsStrength, getProjectDeliveries }
+const getTeams = async ()=>{
+    try {        
+        const res = await instance.get("teams")
+        return res.data
+    } catch (error) {
+        console.log(error);
+    }
+}
+export { getTeamsStrength, getProjectDeliveries, getTeams }

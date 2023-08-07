@@ -10,7 +10,7 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { getTeamsStrength } from '@/api';
-
+import { teamsStrength } from '@/data/dashboardTeams';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -19,7 +19,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
 export const options = {
   responsive: true,
   plugins: {
@@ -32,25 +31,8 @@ export const options = {
     },
   },
 };
-
-
-
-export function TeamsChart({ info }) {
-  const [labels, setLabels] = useState([])
-  const [numbers, setNumbers] = useState([])
-    useEffect(() => {
-    //   async function getData() {
-    //     const res = await getTeamsStrength()
-    // setLabels(res.labels)
-    // setNumbers(res.data)
-    //   }
-    //   getData()
-    setLabels(info.labels)
-    setNumbers(info.data)
-    console.log(info)
-    }, [])
-  // console.log(data);
-  const data = {
+export function TeamsChart({ labels,numbers }) {
+  const info = {
     labels,
     datasets: [
       {
@@ -60,11 +42,5 @@ export function TeamsChart({ info }) {
       }
     ],
   };
-  return <Bar data={data} />;
-}
-export async function getStaticProps() {
-  const res = await getTeamsStrength()
-  return {
-    props: { info: res }
-  }
+  return <Bar data={info} />;
 }
