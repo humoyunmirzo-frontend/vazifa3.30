@@ -9,6 +9,7 @@ import { CssBaseline, ThemeProvider, Typography, createTheme } from '@mui/materi
 import { useState } from 'react'
 import { ThemeContext } from '@/contexts/themeContext'
 import { getProjectDeliveries, getTeamsStrength } from '@/api'
+import { useRouter } from 'next/router'
 const statisticCards = [
   {
     title: "Top 10",
@@ -30,15 +31,12 @@ const statisticCards = [
   },
 ]
 export default function Home({ data, projectsData }) {
-  console.log(data.labels);
-  console.log(data.data);
   const [mode, setMode] = useState("light")
   const theme = createTheme({
     palette: {
       mode: mode,
     },
   });
-
   return (
     <>
       <Head>

@@ -1,7 +1,7 @@
 export const teams = [
     {
-        name: "Designers",
-        path: "/designers",
+        name: "designers",
+        slug: "designer",
         members: [
             {
                 img: require("../assets/images/Rectangle 774.png"),
@@ -31,8 +31,8 @@ export const teams = [
         ]
     },
     {
-        name: "Developers",
-        path: "/developers",
+        name: "developers",
+        slug: "developer",
         members: [
             {
                 img: require("../assets/images/Rectangle 774 (2).png"),
@@ -57,4 +57,3 @@ export const teams = [
         ]
     }
 ]
-

@@ -3,10 +3,9 @@ import Dashboard from '@/components/Dashboard'
 import { CssBaseline, Grid, ThemeProvider, Typography, createTheme } from '@mui/material'
 import { useState } from 'react'
 import { ThemeContext } from '@/contexts/themeContext'
-import { teams } from '@/data/teams'
 import { useRouter } from 'next/router'
 import { getTeams } from '@/api'
-export default function Home({data}) {
+export default function Home({ data }) {
   const [mode, setMode] = useState("light")
   const theme = createTheme({
     palette: {
@@ -30,13 +29,13 @@ export default function Home({data}) {
         <CssBaseline />
         <ThemeProvider theme={theme}>
           <Dashboard>
-            <Grid spacing={3} sx={{mt:2}} container>
+            <Grid spacing={3} sx={{ mt: 2 }} container>
               {
-                teams.map((item, index) => (
-                  <Grid sx={{cursor:"pointer"}} onClick={(()=> router.push(router.pathname + item.path))} key={index} item xs={12} sm={6} md={3} lg={4}>
+                data.map((item, index) => (
+                  <Grid sx={{ cursor: "pointer" }} onClick={(() => router.push("/teams/" + item.slug))} key={index} item xs={12} sm={6} md={3} lg={4}>
                     <div className="card">
                       <div className="card-body">
-                        <h5 className="card-title">{item.name}</h5>
+                        <h5 className="card-title text-capitalize">{item.name}</h5>
                         <div className="card-subtitle">
                           Quantity of members: {item.members.length}
                         </div>
@@ -53,11 +52,11 @@ export default function Home({data}) {
     </>
   )
 }
-export async function getStaticProps(){
+export async function getStaticProps() {
   const res = await getTeams()
   return {
-    props:{
-      data:res
+    props: {
+      data: res
     }
   }
 }

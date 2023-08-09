@@ -1,4 +1,4 @@
-import { teams } from "@/data/teams";
+import { teams } from "@/data/dashboardTeams"
 export default function handler(req, res) {
   res.status(200).json(teams)
 }
