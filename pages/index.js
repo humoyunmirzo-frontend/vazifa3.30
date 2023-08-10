@@ -1,15 +1,15 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Dashboard from '@/components/Dashboard'
-import { TeamsChart } from '@/components/TeamsChart'
 import Image from 'next/image'
-import { ProjectDeliveriesChart } from '@/components/ProjectDeliveriesChart'
 import Notifications from '@/components/Notifications'
 import { CssBaseline, ThemeProvider, Typography, createTheme } from '@mui/material'
 import { useState } from 'react'
 import { ThemeContext } from '@/contexts/themeContext'
 import { getProjectDeliveries, getTeamsStrength } from '@/api'
 import { useRouter } from 'next/router'
+import TeamsChart from '@/components/TeamsChart'
+import ProjectDeliveriesChart from '@/components/ProjectDeliveriesChart'
 const statisticCards = [
   {
     title: "Top 10",
