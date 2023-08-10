@@ -30,7 +30,7 @@ const options = {
     },
 }
 
-export function ProjectDeliveriesChart({labels, numbers1, numbers2}) {
+export default function ProjectDeliveriesChart({labels, numbers1, numbers2}) {
     // const [labels, setLabels] = useState()
     // const [numbers1, setNumbers1] = useState()
     // const [numbers2, setNumbers2] = useState()

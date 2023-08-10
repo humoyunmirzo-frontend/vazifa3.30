@@ -31,7 +31,7 @@ export const options = {
     },
   },
 };
-export function TeamsChart({ labels,numbers }) {
+export default function TeamsChart({ labels,numbers }) {
   const info = {
     labels,
     datasets: [
