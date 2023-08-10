@@ -36,7 +36,7 @@ export default function Home({ data }) {
                   <div className="card">
                     <Image className="card-img-top w-100 h-25" objectFit={"cover"} src={item.img} alt="Image" />
                     <div className="card-body">
-                      <h5 className="card-title ">{item.name}</h5>
+                      <h5 className="card-title p-0">{item.name}</h5>
                       <p className="card-text">Group: {item.groupName}</p>
                     </div>
                   </div>
