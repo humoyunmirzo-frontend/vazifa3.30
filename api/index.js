@@ -1,10 +1,10 @@
 import axios from 'axios'
 const instance = axios.create({
-    baseURL: "https://jsonplaceholder.typicode.com/"
+    baseURL: "https://vazifa3-30-cdqwfc6n2-humoyunmirzo-frontend.vercel.app/api/"
 })
 const getTeamsStrength = async () => {
     try {
-        const res = await instance.get("todos")
+        const res = await instance.get("teamschart")
         return res.data
     } catch (error) {
         console.log(error);
@@ -12,7 +12,7 @@ const getTeamsStrength = async () => {
 }
 const getProjectDeliveries = async () => {
     try {
-        const res = await instance.get("todos")
+        const res = await instance.get("projects")
         return res.data
     } catch (error) {
         return []
@@ -20,7 +20,7 @@ const getProjectDeliveries = async () => {
 }
 const getTeams = async ()=>{
     try {        
-        const res = await instance.get("todos")
+        const res = await instance.get("teams")
         return res.data
     } catch (error) {
         return []
@@ -28,8 +28,7 @@ const getTeams = async ()=>{
 }
 const getTeam = async (team)=>{
         try {        
-            // const res = await instance.get(`teams/${team}`)
-            const res = await instance.get(`todos`)
+            const res = await instance.get(`teams/${team}`)
             return res.data
         } catch (error) {
             return []
