@@ -15,7 +15,7 @@ const getProjectDeliveries = async () => {
         const res = await instance.get("projects")
         return res.data
     } catch (error) {
-        console.log(error);
+        return []
     }
 }
 const getTeams = async ()=>{
@@ -23,7 +23,7 @@ const getTeams = async ()=>{
         const res = await instance.get("teams")
         return res.data
     } catch (error) {
-        console.log(error);
+        return []
     }
 }
 const getTeam = async (team)=>{
@@ -31,7 +31,7 @@ const getTeam = async (team)=>{
             const res = await instance.get(`teams/${team}`)
             return res.data
         } catch (error) {
-            console.log(error);
+            return []
         }
     }
 export { getTeamsStrength, getProjectDeliveries,getTeams, getTeam }
