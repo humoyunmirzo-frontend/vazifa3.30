@@ -1,6 +1,6 @@
 import axios from 'axios'
 const instance = axios.create({
-    baseURL: "https://vazifa3-30.vercel.app/api/"
+    baseURL: "http://localhost:3000/api/"
 })
 const getTeamsStrength = async () => {
     try {
