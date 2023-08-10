@@ -37,7 +37,7 @@ export default function Home({ data }) {
                       <div className="card-body">
                         <h5 className="card-title text-capitalize">{item.name}</h5>
                         <div className="card-subtitle">
-                          Quantity of members: {item.members.length}
+                          Quantity of members: 5
                         </div>
                       </div>
                     </div>
